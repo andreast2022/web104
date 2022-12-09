@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Care Reminder</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="function.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+
+
+
+</head>
+
+<body>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyD3K75Jm0fv3H5yg2hcXxm_YTOcRAD8nEY",
+      authDomain: "web-104-c9142.firebaseapp.com",
+      projectId: "web-104-c9142",
+      storageBucket: "web-104-c9142.appspot.com",
+      messagingSenderId: "834959308190",
+      appId: "1:834959308190:web:9056d9cc9b8322c7e0528f",
+      measurementId: "G-M6Q0QEZKZ8"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+
+  </script>
+  <header>
+    <h1>Plant Care Reminder</h1>
+  </header>
+
+  
+
+  <div class="mainGrid">
+    <form id="reset">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Enter New Plant</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="My new plant!">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Watering Schedule</label>
+        <select class="form-control" id="exampleFormControlSelect1" placeholder="Who's thirsty?">
+          <option value=""></option>
+          <option>Water: Once per week</option>
+          <option>Water: Every two weeks</option>
+          <option>Water: Every three weeks</option>
+          <option> Water: Monthly</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Fertilization Schedule</label>
+        <select class="form-control" id="exampleFormControlSelect2">
+          <option value="..."></option>
+          <option>Feed: Every two weeks</option>
+          <option>Feed: Monthly</option>
+          <option>Feed: Every 6 months</option>
+          <option>Feed: Yearly</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Additional plant care information:</label>
+        </br>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea placeholder="Re-potting, trimming, propagate etc...">
+        <button2 onclick="storeData()">Submit</button>
+       
+    </form> 
+  </div>
+   
+    <div class="fade-in-image"> 
+     
+      <img id="firstImage" class="firstImage" src="snakePlantIMG_1688.JPG" alt="Snake plant">
+      <button onclick="playSlideshow()">Play</button>
+        <button onclick="stopSlideShow()">Stop</button>
+    
+       
+    </div>
+  </div>
+
+<h3>"Find someone who grows flowers </br>in the darkest parts of you"</h3>
+</br>
+<p>~Zach Bryan</p>
+  <div class="browseButton">
+ 
+  </div>
+  <footer>
+    <ul>
+      <li> <a href="browsePlants.html"><button>My Plants</button></a></li>
+      <li><a href="planning.html"><button>Planning</button></a></li>
+      <li><a href="stores.html"><button>Plant Stores</button></a></li>
+      <li><a href="help.html"><button>Plant Help</button></a></li>
+   
+    </ul>
+    <p><a href="https://www.linkedin.com/in/andrea-stoney-1b8016251/">Copyright: Andrea Stoney 2022</a></p>
+    
+  </footer>
+
+  
+
+  
+
+
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+Subject: <input id=subject type="text"> </br>
+Content: <input id=content type="text-area"> </br>
+Username: <input id=userName type="text">
+
+<script>
+
+
+const firebaseConfig = {
+      apiKey: "AIzaSyD3K75Jm0fv3H5yg2hcXxm_YTOcRAD8nEY",
+      authDomain: "web-104-c9142.firebaseapp.com",
+      projectId: "web-104-c9142",
+      storageBucket: "web-104-c9142.appspot.com",
+      messagingSenderId: "834959308190",
+      appId: "1:834959308190:web:9056d9cc9b8322c7e0528f",
+      measurementId: "G-M6Q0QEZKZ8"
+    };
+  
+
+    firebase.initializeApp(firebaseConfig); 
+    const db = firebase.firestore(); //assigning the firestore functionality to db variable
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+
+<input id="note" type="text">
+<button onclick="createData()">click here</button>
+
+<script>
+
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDYbFZV93DAi-h5TMBVfPCk6CeGKV9EBZI",
+      authDomain: "web104-5db40.firebaseapp.com",
+      projectId: "web104-5db40",
+      storageBucket: "web104-5db40.appspot.com",
+      messagingSenderId: "851714542960",
+      appId: "1:851714542960:web:23b2eef486799b840253b5",
+      measurementId: "G-2T326CHRTJ"
+    };
+  
+
+    firebase.initializeApp(firebaseConfig); 
+    const db = firebase.firestore(); // assigning the firestore functionality to db variable
+
+    // CRUD OPERATIONS - CREATE
+
+function createData() {
+
+let noteData = document.getElementById("note").value
+// let collection = prompt("what collection do you want the data inserted into?")
+// let doc = prompt("what is the name of the document")
+let userId = prompt("enter id")
+
+db.collection("notes").doc().set({
+    noteContent: noteData,
+    userId: userId
+})
+
+.then(() => {
+    console.log("Document successfully written!");
+})
+.catch((error) => {
+    console.error("Error writing document: ", error);
+});
+
+}
+
+
+
+    // CRUD OPERATION - READ
+
+function readData(){
+    let docRef = db.collection("notes").doc("example");
+
+    docRef.get().then((doc) => { // this promise returns the data
+
+            if (doc.exists) {
+            console.log("Document data:", doc.data().notes); // return data
+            } else {
+                    // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+console.log("Error getting document:", error);
+        });
+
+
+}
+
+
+function findData(){
+
+    let docs = db.collection("notes");
+    let myNotes = docs.get().then(data =>{
+        data.forEach(doc => {
+           console.log(doc.data().notes)
+
+        })
+    })
+
+
+
+
+
+
+}
+
+
+
+
+
+  </script>
+
+
+

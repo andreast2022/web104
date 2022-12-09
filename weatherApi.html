@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 5rem;
+        }
+        p {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nelson Weather</h1> 
+  <div id="weather"></div> 
+  <div id="weather2"></div> 
+  <button onclick="today()">Todays Weather</button>
+  <button onclick="tomorrow()">Tomorrows Weather</button>
+
+    
+<!-- We interac with API by making requests to endpoints 
+http://mywebsite.com/create
+
+http://mywebsite.com/read 
+http://mywebsite.com/update
+http://mywebsite.com/delete
+
+
+http://api.marketstack.com/v1/eod
+? access_key = YOUR_ACCESS_KEY 
+& symbols = AAPL
+
+
+http://api.marketstack.com/v1/eod?access_key=7f57b03e875033aa5009c4d7463c73bc&symbols=AAPL -->
+
+
+<script>
+
+
+    
+    let url = "https://www.7timer.info/bin/civil.php?lon=-117.29&lat=49.4928&unit=metric&output=json";
+
+    
+    let response = fetch(url);
+    
+    fetch(url)
+       .then(response => response.json() // fetch must be designed as a javascript promise
+       
+    //   response.text() // reads response returns text
+    //   response.json() // parse the json for you automatically
+    //   response.formData() // revisted 
+    //   response.blob()
+    //   response.arrayBuffer()
+
+        ).then((data) => {
+      console.log(data)
+      let weatherDiv = document.getElementById("weather")
+      let weather = data.dataseries[0].temp2m
+      weatherDiv.innerHTML = "<p>last nights temperature: " + weather + "</p>"
+    //   weatherDiv.appendChild(weather)
+      
+
+      //console.log(data.data[0].open)
+
+    })
+      
+      
+        .catch(
+    function(){
+      console.log("not found")
+    }
+    )
+    function today(){
+
+    
+    let url7Day = "https://www.7timer.info/bin/civillight.php?lon=-123.1&lat=49.2827&unit=metric&output=json"
+
+    let response2 = fetch(url7Day);
+    
+    fetch(url7Day)
+       .then(response2 => response2.json() // fetch must be designed as a javascript promise
+       
+    //   response.text() // reads response returns text
+    //   response.json() // parse the json for you automatically
+    //   response.formData() // revisted 
+    //   response.blob()
+    //   response.arrayBuffer()
+
+        ).then((data) => {
+      console.log(data)
+      let weatherDiv2 = document.getElementById("weather2")
+      let weather2 = data.dataseries[0].weather
+      
+      weatherDiv2.innerHTML = "<p>todays weather: " + weather2 + "</p>"
+    //   weatherDiv.appendChild(weather)
+      
+        
+      //console.log(data.data[0].open)
+
+    })
+      
+      
+        .catch(
+    function(){
+      console.log("not found")
+    }
+    )
+}
+function tomorrow(){
+
+    
+let url7Day = "https://www.7timer.info/bin/civillight.php?lon=-123.1&lat=49.2827&unit=metric&output=json"
+
+let response2 = fetch(url7Day);
+
+fetch(url7Day)
+   .then(response2 => response2.json() // fetch must be designed as a javascript promise
+   
+//   response.text() // reads response returns text
+//   response.json() // parse the json for you automatically
+//   response.formData() // revisted 
+//   response.blob()
+//   response.arrayBuffer()
+
+    ).then((data) => {
+  console.log(data)
+  let weatherDiv2 = document.getElementById("weather2")
+  
+  let weather3 = data.dataseries[1].weather
+  weatherDiv2.innerHTML = "<p>tomorrows weather: " + weather3 + "</p>"
+//   weatherDiv.appendChild(weather)
+  
+    
+  //console.log(data.data[0].open)
+
+})
+  
+  
+    .catch(
+function(){
+  console.log("not found")
+}
+)
+}
+    </script>
+</body>
+</html>
+
+  
+    

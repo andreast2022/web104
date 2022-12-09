@@ -1,0 +1,243 @@
+body {
+    background-color: bisque!important;
+    font-family: mali;
+    margin: auto;
+}
+html {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: mali;
+}
+header h1 {
+    font-family: mali;
+    font-size: 3rem;
+    color: green;
+    line-height: 3rem;
+    text-align: center;
+    background-color: bisque;
+    margin: 0;
+    padding: 1rem;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+    margin-top: 3rem;
+    background-color: bisque;
+}
+h3 {
+    font-family: mali;
+    text-align: center;
+    padding-top: 1rem;
+    margin-bottom: 0;
+    background-color: bisque;
+}
+.firstImage {
+    max-width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+}
+.browseButton {
+    text-align: center;
+    line-height: 3rem;
+    background-color: bisque;
+    padding-bottom: 1rem;
+}
+button {
+    font-family: mali;
+    color: bisque;
+    background-color: green;
+    line-height: 3rem;
+    text-align: center;
+    border: 2px solid black;
+}
+button2 {
+    font-family: mali;
+    color: bisque;
+    background-color: green;
+    font-size: 1.5rem;
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+button:hover {
+    color: green;
+    background-color: bisque;
+    border: none;
+}
+button2:hover {
+    color: green;
+    background-color: bisque;
+    border: none;
+}
+li {
+    background-color: bisque;
+    font-family: mali;
+    margin: 0
+}
+.mainGrid {
+    font-family: mali;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 1rem;
+    background-color: bisque;
+}
+.form-group {
+    font-size: 2rem;
+    background-color: bisque;
+}
+#exampleFormControlTextarea1 {
+   
+    line-height: 2rem;
+    padding: 1rem;
+}
+#plantList {
+    padding-left: 1rem;
+    list-style-type: none;
+    background-color: bisque;
+}
+.fade-in-image { 
+    text-align: center;
+    animation: fadeIn 5s; 
+    background-color: bisque;
+}
+.fade-in-image2 { 
+    text-align: center;
+    animation: fadeIn 5s; 
+    background-color: bisque;
+    padding-top: 1rem;
+}
+
+.fade-in-image2 a {
+    text-decoration: none;
+    color: black;
+}
+.fade-in-image p {
+    margin-bottom: 0;
+    text-align: center;
+}
+.fade-in-image2 a:hover {
+    color: green;
+}
+.fade-in-image3 img  { 
+    text-align: center;
+    animation: fadeIn 5s; 
+    background-color: transparent;
+    padding-top: 1rem;
+    border-radius: 80%;
+}
+.fade-in-image3 img:hover {
+    transform: scaleX(-1);
+  }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: auto;
+    font-family: mali;
+}
+nav a:hover {
+    color: green;
+}
+.plantStores li a {
+    text-decoration: none;
+    color: green;
+    font-size: 1.5rem;
+}
+.plantStores li a:hover {
+    color: black;
+}
+.plantStores ul {
+    list-style-type: none;
+    text-align: center;
+}
+.helpWebsites li a {
+    text-decoration: none;
+    color: green;
+    font-size: 1.5rem;    
+}
+.helpWebsites li a:hover {
+    color: black;
+}
+.helpWebsites ul {
+    list-style-type: none;
+    text-align: center;
+}
+.helpProducts li a {
+    text-decoration: none;
+    color: green;
+    font-size: 1.5rem;
+}
+.helpProducts li a:hover {
+    color: black;
+}
+.helpProducts ul {
+    list-style-type: none;
+    text-align: center;
+}
+h3 a {
+    text-decoration: none;
+    color: green;
+}
+h3 a:hover {
+    color: black;
+}
+ul {
+    background-color: bisque;
+}
+
+footer {
+    background-color: bisque;
+    
+    
+}
+footer ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0;
+   
+}
+footer ul a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-family: mali;      
+}
+
+
+p {
+    text-align: right;
+    font-family: mali;
+    padding-right: 1rem;
+    margin-bottom: 0;
+    background-color: bisque;
+    
+}
+p a {
+    text-decoration: none;
+    color: black;
+}
+p a:hover {
+    color: green;
+}

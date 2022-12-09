@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Note App</title>
+<style>
+    h1 {
+        font-size: 4rem;
+        margin-bottom: 0.5rem;
+        color: darkgreen;
+    }
+</style>
+</head>
+<body>
+    <h1>My Notes:</h1>
+
+    <input id="noteId" placeholder="Name"> <br>
+    <input id="noteContent" placeholder="Content"> <br>
+  
+    
+    <button onclick="storeData()">store</button>
+    <div id="list"></div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+
+<script>
+// My web app's Firebase configuration
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD3K75Jm0fv3H5yg2hcXxm_YTOcRAD8nEY",
+  authDomain: "web-104-c9142.firebaseapp.com",
+  projectId: "web-104-c9142",
+  storageBucket: "web-104-c9142.appspot.com",
+  messagingSenderId: "834959308190",
+  appId: "1:834959308190:web:9056d9cc9b8322c7e0528f",
+  measurementId: "G-M6Q0QEZKZ8"
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+// CREATE 
+  function storeData(){
+
+    //how to write to the database
+    
+    
+    let doc = document.getElementById("noteId").value
+    let fname = document.getElementById("noteContent").value
+   
+
+    db.collection("newNote").doc(doc).set({  //writing to the database(just change"leads" to collection I want)
+    name: doc,
+    content: fname,
+   
+})
+
+.then(function() {
+console.log("Document successfully written!");
+    readData()
+
+
+}).catch(function(error) {
+console.error("Error writing document: ", error);
+});
+
+
+
+  }
+  function readData() {
+    var newNote = db.collection('newNote'); //reading the databases (change"leads" to collection I want)
+var businesses = newNote.get()
+    .then(snapshot => {
+
+        //this is looping through all of the results from the database
+        snapshot.forEach(doc => {
+            //everything here is for each item out of the results from the database
+            let content = document.createElement("LI")
+            content.innerText += doc.id + " " + doc.data().content
+
+            document.body.appendChild(content)
+            console.log(doc.id, '=>', doc.data());
+        });
+    })
+    .catch(err => {
+        console.log('Error getting documents', err);
+    }); 
+  }
+  readData()
+
+</script>
+
+<!-- <input id="test" placeholder="document">
+<button onclick="storeData()">store data</button> -->
+
+
+</body>
+</html>
